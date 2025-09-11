@@ -2,9 +2,7 @@ class_name CharacterValkyrie extends CharacterBody2D
 
 var direction: Vector2 = Vector2.ZERO
 var cardinal_direction: Vector2 = Vector2.ZERO
-const DIR_4 = [Vector2.RIGHT, Vector2.LEFT]
-
-signal DirectionChanged(new_direction: Vector2)
+var anim_scale_x: float = 1
 
 @onready var sprite_2d_idle: Sprite2D = $Sprite2DIdle
 @onready var sprite_2d_slash: Sprite2D = $Sprite2DSlash
@@ -34,12 +32,10 @@ func update_animation(state: String) -> void:
 
 func set_direction() -> bool:
 	var new_direction: Vector2 = direction * 0.99 + cardinal_direction * 0.01
-	new_direction = Vector2.LEFT if new_direction.x <= 0 else Vector2.RIGHT
+	new_direction = Vector2.LEFT if new_direction.x < 0 else Vector2.RIGHT
 	if new_direction == cardinal_direction:
 		return false
 	cardinal_direction = new_direction
-	DirectionChanged.emit(new_direction)
-	sprite_2d_idle.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
-	sprite_2d_walk.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
-	sprite_2d_slash.scale.x = -1 if cardinal_direction == Vector2.LEFT else 1
+	anim_scale_x  = sign(cardinal_direction.x)
+	sprite_2d_walk.scale.x = anim_scale_x
 	return true

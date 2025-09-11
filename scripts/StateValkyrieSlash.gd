@@ -11,6 +11,7 @@ var is_attacking: bool = false
 
 func enter() -> void:
 	sprite_2d_slash.visible = true
+	sprite_2d_slash.scale.x = valkyrie.anim_scale_x
 	valkyrie.update_animation("slash")
 	animation_player.animation_finished.connect(end_attack)
 	is_attacking = true

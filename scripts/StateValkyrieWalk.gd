@@ -1,6 +1,6 @@
 class_name StateValkyrieWalk extends StateValkyrie
 
-@export var move_speed: float =50
+@export var move_speed: float = 100
 
 @onready var sprite_2d_walk: Sprite2D = $"../../Sprite2DWalk"
 @onready var idle: StateValkyrieIdle = $"../Idle"
@@ -8,12 +8,13 @@ class_name StateValkyrieWalk extends StateValkyrie
 
 func enter() -> void:
 	sprite_2d_walk.visible = true
+	sprite_2d_walk.scale.x = valkyrie.anim_scale_x
 	valkyrie.update_animation("walk")
 
 func exit() -> void:
 	sprite_2d_walk.visible = false
 
-func process(delta: float) -> StateValkyrie:
+func process(_delta: float) -> StateValkyrie:
 	if valkyrie.direction == Vector2.ZERO:
 		return idle
 	valkyrie.velocity = valkyrie.direction * move_speed

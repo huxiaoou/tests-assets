@@ -30,7 +30,6 @@ func initialize(_CharacterValkyrie: CharacterValkyrie) -> void:
 		StateValkyrie.valkyrie = _CharacterValkyrie
 		check_state(states[0])
 		process_mode = Node.PROCESS_MODE_INHERIT
-		print(states[0].valkyrie)
 	else:
 		print("No state available")
 

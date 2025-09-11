@@ -6,6 +6,7 @@ class_name StateValkyrieIdle extends StateValkyrie
 
 func enter() -> void:
 	sprite_2d_idle.visible = true
+	sprite_2d_idle.scale.x = valkyrie.anim_scale_x
 	valkyrie.update_animation("idle")
 
 func exit() -> void:
