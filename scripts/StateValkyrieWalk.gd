@@ -1,6 +1,6 @@
 class_name StateValkyrieWalk extends StateValkyrie
 
-@export var move_speed: float = 100
+@export var move_speed: float = 180
 
 @onready var sprite_2d_walk: Sprite2D = $"../../Sprite2DWalk"
 @onready var idle: StateValkyrieIdle = $"../Idle"

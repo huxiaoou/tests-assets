@@ -1,12 +1,11 @@
 class_name StateValkyrieSlash extends StateValkyrie
 
 var is_attacking: bool = false
-@export_range(1,20,0.5) var decelerate_speed: float = 5.0
+@export_range(1, 20, 0.5) var decelerate_speed: float = 1.8
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
 @onready var idle: StateValkyrie = $"../Idle"
 @onready var walk: StateValkyrie = $"../Walk"
 @onready var sprite_2d_slash: Sprite2D = $"../../Sprite2DSlash"
-
 
 
 func enter() -> void:
@@ -15,7 +14,7 @@ func enter() -> void:
 	valkyrie.update_animation("slash")
 	animation_player.animation_finished.connect(end_attack)
 	is_attacking = true
-	await get_tree().create_timer(0.2).timeout
+	#await get_tree().create_timer(1.2).timeout
 	
 
 func exit() -> void:
