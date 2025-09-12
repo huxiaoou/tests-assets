@@ -3,8 +3,8 @@ class_name StateValkyrieSlash extends StateValkyrie
 var is_attacking: bool = false
 @export_range(1,20,0.5) var decelerate_speed: float = 5.0
 @onready var animation_player: AnimationPlayer = $"../../AnimationPlayer"
-@onready var idle: StateValkyrieIdle = $"../Idle"
-@onready var walk: StateValkyrieWalk = $"../Walk"
+@onready var idle: StateValkyrie = $"../Idle"
+@onready var walk: StateValkyrie = $"../Walk"
 @onready var sprite_2d_slash: Sprite2D = $"../../Sprite2DSlash"
 
 
