@@ -26,7 +26,7 @@ func exit() -> void:
 func process(delta: float) -> StateValkyrie:
 	valkyrie.velocity -= valkyrie.velocity * decelerate_speed * delta
 	if not is_attacking:
-		return idle if valkyrie.direction == Vector2.ZERO else walk
+		return idle if valkyrie.direction_mov == Vector2.ZERO else walk
 	return null
 
 func end_attack(_new_anim_name: String) -> void:

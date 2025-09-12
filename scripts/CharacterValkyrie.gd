@@ -1,7 +1,8 @@
 class_name CharacterValkyrie extends CharacterBody2D
 
-var direction: Vector2 = Vector2.ZERO
-var cardinal_direction: Vector2 = Vector2.ZERO
+var direction_mov: Vector2 = Vector2.ZERO
+var direction_anim_new: Vector2 = Vector2.ZERO
+var direction_anim: Vector2 = Vector2.ZERO
 var anim_scale_x: float = 1
 
 @onready var sprite_2d_idle: Sprite2D = $Sprite2DIdle
@@ -12,6 +13,7 @@ var anim_scale_x: float = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	sprite_2d_idle.visible = true
 	sprite_2d_slash.visible = false
 	sprite_2d_walk.visible = false
 	state_machine.initialize(self)
@@ -19,7 +21,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
-	direction = Vector2(
+	direction_mov = Vector2(
 		Input.get_axis("left", "right"),
 		Input.get_axis("up", "down"),
 	).normalized()
@@ -30,12 +32,13 @@ func _physics_process(_delta: float) -> void:
 func update_animation(state: String) -> void:
 	animation_player.play(state)
 
-func set_direction() -> bool:
-	var new_direction: Vector2 = direction * 0.99 + cardinal_direction * 0.01
-	new_direction = Vector2.LEFT if new_direction.x < 0 else Vector2.RIGHT
-	if new_direction == cardinal_direction:
-		return false
-	cardinal_direction = new_direction
-	anim_scale_x  = sign(cardinal_direction.x)
-	sprite_2d_walk.scale.x = anim_scale_x
-	return true
+func cal_new_anim_direction() -> void:
+	direction_anim_new = direction_mov * 0.99 + direction_anim * 0.01
+	direction_anim_new = Vector2.LEFT if direction_anim_new.x < 0 else Vector2.RIGHT
+
+func is_anim_direction_changed() -> bool:
+	return direction_anim_new != direction_anim
+
+func update_anim_direction():
+	direction_anim = direction_anim_new
+	anim_scale_x  = sign(direction_anim.x)

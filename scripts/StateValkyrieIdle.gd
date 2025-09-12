@@ -13,7 +13,7 @@ func exit() -> void:
 	sprite_2d_idle.visible = false
 
 func process(_delta: float) -> StateValkyrie:
-	if valkyrie.direction != Vector2.ZERO:
+	if valkyrie.direction_mov != Vector2.ZERO:
 		return walk
 	valkyrie.velocity = Vector2.ZERO
 	return null

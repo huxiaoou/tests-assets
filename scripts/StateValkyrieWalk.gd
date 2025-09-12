@@ -15,10 +15,13 @@ func exit() -> void:
 	sprite_2d_walk.visible = false
 
 func process(_delta: float) -> StateValkyrie:
-	if valkyrie.direction == Vector2.ZERO:
+	if valkyrie.direction_mov == Vector2.ZERO:
 		return idle
-	valkyrie.velocity = valkyrie.direction * move_speed
-	if valkyrie.set_direction():
+	valkyrie.velocity = valkyrie.direction_mov * move_speed
+	valkyrie.cal_new_anim_direction()
+	if valkyrie.is_anim_direction_changed():
+		valkyrie.update_anim_direction()
+		sprite_2d_walk.scale.x = valkyrie.anim_scale_x
 		valkyrie.update_animation("walk")
 	return null
 
