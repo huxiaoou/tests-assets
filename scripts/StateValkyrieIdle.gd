@@ -16,6 +16,7 @@ func process(_delta: float) -> StateValkyrie:
 	if valkyrie.direction_mov != Vector2.ZERO:
 		return walk
 	valkyrie.velocity = Vector2.ZERO
+	valkyrie.change_anim_direction("idle")
 	return null
 
 func unhandle_input(_event: InputEvent) -> StateValkyrie:
