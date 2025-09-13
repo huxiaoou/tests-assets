@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://chfxf7cguc0ka"]
+
+[ext_resource type="Texture2D" uid="uid://cnxexhkv1ti81" path="res://assets/maps/environment_forest.png" id="1_72iqi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnffg"]
+size = Vector2(50, 25)
+
+[node name="EnvTreeA" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -32)
+texture = ExtResource("1_72iqi")
+region_enabled = true
+region_rect = Rect2(768, 768, 256, 256)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(9, 61)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_bnffg")

@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://fn55lnq5bpf"]
+
+[ext_resource type="Texture2D" uid="uid://cnxexhkv1ti81" path="res://assets/maps/environment_forest.png" id="1_pv37w"]
+
+[node name="EnvGrassB" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 60)
+texture = ExtResource("1_pv37w")
+region_enabled = true
+region_rect = Rect2(1024, 0, 64, 64)

@@ -11,9 +11,8 @@
 [ext_resource type="Script" uid="uid://da04ywu3slwpl" path="res://scripts/StateValkyrieSlash.gd" id="8_873ht"]
 [ext_resource type="Script" uid="uid://bguv88gn5wetp" path="res://scripts/CameraValkyrie.gd" id="10_6l51o"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggcuj"]
-radius = 32.0
-height = 109.96
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6l51o"]
+size = Vector2(50, 30)
 
 [sub_resource type="Animation" id="Animation_ggcuj"]
 length = 0.001
@@ -136,7 +135,8 @@ hframes = 6
 vframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CapsuleShape2D_ggcuj")
+position = Vector2(0, 67)
+shape = SubResource("RectangleShape2D_6l51o")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
