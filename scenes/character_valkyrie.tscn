@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c1522njwe33p6"]
+[gd_scene load_steps=17 format=3 uid="uid://c1522njwe33p6"]
 
 [ext_resource type="Script" uid="uid://c3t2awagwvcj" path="res://scripts/CharacterValkyrie.gd" id="1_f14pw"]
 [ext_resource type="Texture2D" uid="uid://c5mwn2tkddved" path="res://assets/Valkyrie/idle.png" id="2_f14pw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://c2uuygog3xb5j" path="res://scripts/StateValkyrieIdle.gd" id="6_ths34"]
 [ext_resource type="Script" uid="uid://b0w4pv8t4bpp7" path="res://scripts/StateValkyrieWalk.gd" id="7_upwqe"]
 [ext_resource type="Script" uid="uid://da04ywu3slwpl" path="res://scripts/StateValkyrieSlash.gd" id="8_873ht"]
+[ext_resource type="Script" uid="uid://bguv88gn5wetp" path="res://scripts/CameraValkyrie.gd" id="10_6l51o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ggcuj"]
 radius = 32.0
@@ -142,3 +143,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_d301r")
 }
 autoplay = "idle"
+
+[node name="CameraPlayer" type="Camera2D" parent="."]
+script = ExtResource("10_6l51o")
