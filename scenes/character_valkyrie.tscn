@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://c1522njwe33p6"]
+[gd_scene load_steps=16 format=3 uid="uid://c1522njwe33p6"]
 
 [ext_resource type="Script" uid="uid://c3t2awagwvcj" path="res://scripts/CharacterValkyrie.gd" id="1_f14pw"]
 [ext_resource type="Texture2D" uid="uid://c5mwn2tkddved" path="res://assets/Valkyrie/idle.png" id="2_f14pw"]
 [ext_resource type="Texture2D" uid="uid://bgag2m1dxpr16" path="res://assets/Valkyrie/walk.png" id="3_f14pw"]
 [ext_resource type="Texture2D" uid="uid://cagtexj4hjl5e" path="res://assets/Valkyrie/slash.png" id="4_f14pw"]
 [ext_resource type="Script" uid="uid://b813safp4egwv" path="res://scripts/StateMachineValkyrie.gd" id="5_awdhw"]
+[ext_resource type="PackedScene" uid="uid://d1wmm4yrqyrcu" path="res://scenes/direction_arrow.tscn" id="6_873ht"]
 [ext_resource type="Script" uid="uid://c2uuygog3xb5j" path="res://scripts/StateValkyrieIdle.gd" id="6_ths34"]
 [ext_resource type="Script" uid="uid://b0w4pv8t4bpp7" path="res://scripts/StateValkyrieWalk.gd" id="7_upwqe"]
 [ext_resource type="Script" uid="uid://da04ywu3slwpl" path="res://scripts/StateValkyrieSlash.gd" id="8_873ht"]
@@ -114,17 +115,21 @@ script = ExtResource("7_upwqe")
 [node name="Slash" type="Node" parent="StateMachine"]
 script = ExtResource("8_873ht")
 
+[node name="Sprite2DDirectionArrow" parent="." instance=ExtResource("6_873ht")]
+
 [node name="Sprite2DIdle" type="Sprite2D" parent="."]
 texture = ExtResource("2_f14pw")
 hframes = 6
 vframes = 3
 
 [node name="Sprite2DWalk" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("3_f14pw")
 hframes = 6
 vframes = 4
 
 [node name="Sprite2DSlash" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("4_f14pw")
 hframes = 6
 vframes = 2

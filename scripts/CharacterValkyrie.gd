@@ -10,6 +10,7 @@ var anim_scale_x: float = 1
 @onready var sprite_2d_walk: Sprite2D = $Sprite2DWalk
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var state_machine: StateMachineValkyrie = $StateMachine
+@onready var sprite_2d_direction_arrow: DirectionArrow = $Sprite2DDirectionArrow
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,6 +18,7 @@ func _ready() -> void:
 	sprite_2d_slash.visible = false
 	sprite_2d_walk.visible = false
 	state_machine.initialize(self)
+	sprite_2d_direction_arrow.initialize(self)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
