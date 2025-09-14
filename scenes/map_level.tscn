@@ -69,5 +69,6 @@ tile_size = Vector2i(128, 128)
 sources/4 = SubResource("TileSetAtlasSource_0wfyh")
 
 [node name="MapLevel" type="TileMapLayer"]
+z_index = -1
 tile_set = SubResource("TileSet_sugp2")
 script = ExtResource("2_06n14")
