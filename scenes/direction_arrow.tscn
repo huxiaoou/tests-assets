@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1wmm4yrqyrcu"]
+[gd_scene load_steps=8 format=3 uid="uid://d1wmm4yrqyrcu"]
 
 [ext_resource type="Texture2D" uid="uid://cgixveuf2uxls" path="res://sprites/arrow_direction.png" id="1_5hpxm"]
 [ext_resource type="Script" uid="uid://wjd7oityuxac" path="res://scripts/DirectionArrow.gd" id="2_7qvaf"]
+[ext_resource type="PackedScene" uid="uid://5n8lcbg8pfes" path="res://scenes/hurtbox.tscn" id="3_7qvaf"]
 
 [sub_resource type="Animation" id="Animation_6l51o"]
 length = 0.001
@@ -41,6 +42,9 @@ _data = {
 &"show": SubResource("Animation_873ht")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7qvaf"]
+radius = 60.0
+
 [node name="Sprite2DDirectionArrow" type="Sprite2D"]
 texture = ExtResource("1_5hpxm")
 script = ExtResource("2_7qvaf")
@@ -50,3 +54,10 @@ libraries = {
 &"": SubResource("AnimationLibrary_oiwk2")
 }
 autoplay = "show"
+
+[node name="HurtBox" parent="." instance=ExtResource("3_7qvaf")]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(-5, -2)
+shape = SubResource("CircleShape2D_7qvaf")

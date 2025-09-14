@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://de2rvmbaonshu"]
+[gd_scene load_steps=10 format=4 uid="uid://de2rvmbaonshu"]
 
 [ext_resource type="PackedScene" uid="uid://haoyq4hc6vmr" path="res://scenes/map_level.tscn" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://c1522njwe33p6" path="res://scenes/character_valkyrie.tscn" id="3_sugp2"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dunq6bsnn5kp2" path="res://scenes/envs/env_tree_b.tscn" id="5_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b6ptb8q0fk6n7" path="res://scenes/envs/env_tree_c.tscn" id="6_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://stvo1h5wgika" path="res://scenes/envs/env_woods.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://bkmp4vf2du3qv" path="res://scenes/envs_destructible/fence_a.tscn" id="8_85g3d"]
 [ext_resource type="PackedScene" uid="uid://bbfe8uprew476" path="res://scenes/envs/env_grass_a.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://fn55lnq5bpf" path="res://scenes/envs/env_grass_b.tscn" id="9_85g3d"]
 
@@ -68,6 +69,9 @@ position = Vector2(1796, 91)
 
 [node name="EnvGrassB4" parent="Environments" instance=ExtResource("9_85g3d")]
 position = Vector2(10, 373)
+
+[node name="FenceA" parent="Environments" instance=ExtResource("8_85g3d")]
+position = Vector2(791, 909)
 
 [node name="CharacterValkyrie" parent="." instance=ExtResource("3_sugp2")]
 position = Vector2(960, 540)

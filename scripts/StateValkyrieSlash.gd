@@ -6,6 +6,7 @@ var is_attacking: bool = false
 @onready var idle: StateValkyrie = $"../Idle"
 @onready var walk: StateValkyrie = $"../Walk"
 @onready var sprite_2d_slash: Sprite2D = $"../../Sprite2DSlash"
+@onready var sprite_2d_direction_arrow: DirectionArrow = $"../../Sprite2DDirectionArrow"
 
 
 func enter() -> void:
@@ -15,12 +16,14 @@ func enter() -> void:
 	animation_player.animation_finished.connect(end_attack)
 	is_attacking = true
 	#await get_tree().create_timer(1.2).timeout
+	sprite_2d_direction_arrow.start_monitor()
 	
 
 func exit() -> void:
 	sprite_2d_slash.visible = false
 	animation_player.animation_finished.disconnect(end_attack)
 	is_attacking = false
+	sprite_2d_direction_arrow.stop_monitor()
 
 func process(delta: float) -> StateValkyrie:
 	valkyrie.velocity -= valkyrie.velocity * decelerate_speed * delta
