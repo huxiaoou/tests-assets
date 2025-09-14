@@ -27,8 +27,9 @@ metadata/_edit_group_ = true
 shape = SubResource("RectangleShape2D_bnffg")
 
 [node name="HitBox" parent="." instance=ExtResource("2_k421u")]
+position = Vector2(0, 72)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-position = Vector2(0, 72)
 shape = SubResource("RectangleShape2D_oecap")
 debug_color = Color(0.717647, 0, 0, 0.313726)
