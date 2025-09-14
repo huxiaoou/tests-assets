@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://c1522njwe33p6"]
+[gd_scene load_steps=19 format=3 uid="uid://c1522njwe33p6"]
 
 [ext_resource type="Script" uid="uid://c3t2awagwvcj" path="res://scripts/CharacterValkyrie.gd" id="1_f14pw"]
 [ext_resource type="Texture2D" uid="uid://c5mwn2tkddved" path="res://assets/Valkyrie/idle.png" id="2_f14pw"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://d1wmm4yrqyrcu" path="res://scenes/direction_arrow.tscn" id="6_873ht"]
 [ext_resource type="AudioStream" uid="uid://g58fq0ie3voa" path="res://audios/dragon-studio-sword-blade-slicing-flesh.mp3" id="6_oiwk2"]
 [ext_resource type="Script" uid="uid://c2uuygog3xb5j" path="res://scripts/StateValkyrieIdle.gd" id="6_ths34"]
+[ext_resource type="Texture2D" uid="uid://clm3gifcrfk7t" path="res://assets/shadow.png" id="7_h3ag3"]
 [ext_resource type="Script" uid="uid://b0w4pv8t4bpp7" path="res://scripts/StateValkyrieWalk.gd" id="7_upwqe"]
 [ext_resource type="Script" uid="uid://da04ywu3slwpl" path="res://scripts/StateValkyrieSlash.gd" id="8_873ht"]
 [ext_resource type="Script" uid="uid://bguv88gn5wetp" path="res://scripts/CameraValkyrie.gd" id="10_6l51o"]
@@ -116,6 +117,12 @@ script = ExtResource("7_upwqe")
 [node name="Slash" type="Node" parent="StateMachine"]
 script = ExtResource("8_873ht")
 slash_sound = ExtResource("6_oiwk2")
+
+[node name="Sprite2DShadow" type="Sprite2D" parent="."]
+modulate = Color(0, 0, 0, 0.141176)
+position = Vector2(-2, 88)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("7_h3ag3")
 
 [node name="Sprite2DDirectionArrow" parent="." instance=ExtResource("6_873ht")]
 
