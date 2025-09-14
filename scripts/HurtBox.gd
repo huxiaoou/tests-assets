@@ -1,0 +1,13 @@
+class_name HurtBox extends Area2D
+
+# when a area enters HurtBox, and it is a hit box, this area will get hurt
+
+@export var damage: float = 1
+
+func _ready() -> void:
+	area_entered.connect(hurt_box_entered)
+
+
+func hurt_box_entered(area: Area2D) -> void:
+	if area is HitBox:
+		area.take_damage(damage)
