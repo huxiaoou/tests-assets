@@ -1,9 +1,9 @@
 [gd_scene load_steps=19 format=3 uid="uid://c1522njwe33p6"]
 
 [ext_resource type="Script" uid="uid://c3t2awagwvcj" path="res://scripts/CharacterValkyrie.gd" id="1_f14pw"]
-[ext_resource type="Texture2D" uid="uid://c5mwn2tkddved" path="res://assets/Valkyrie/idle.png" id="2_f14pw"]
-[ext_resource type="Texture2D" uid="uid://bgag2m1dxpr16" path="res://assets/Valkyrie/walk.png" id="3_f14pw"]
-[ext_resource type="Texture2D" uid="uid://cagtexj4hjl5e" path="res://assets/Valkyrie/slash.png" id="4_f14pw"]
+[ext_resource type="Texture2D" uid="uid://c5mwn2tkddved" path="res://assets/valkyrie/idle.png" id="2_f14pw"]
+[ext_resource type="Texture2D" uid="uid://bgag2m1dxpr16" path="res://assets/valkyrie/walk.png" id="3_f14pw"]
+[ext_resource type="Texture2D" uid="uid://cagtexj4hjl5e" path="res://assets/valkyrie/slash.png" id="4_f14pw"]
 [ext_resource type="Script" uid="uid://b813safp4egwv" path="res://scripts/StateMachineValkyrie.gd" id="5_awdhw"]
 [ext_resource type="PackedScene" uid="uid://d1wmm4yrqyrcu" path="res://scenes/direction_arrow.tscn" id="6_873ht"]
 [ext_resource type="AudioStream" uid="uid://g58fq0ie3voa" path="res://audios/dragon-studio-sword-blade-slicing-flesh.mp3" id="6_oiwk2"]
