@@ -20,7 +20,8 @@ func exit() -> void:
 func process(_delta: float) -> StateValkyrie:
 	if valkyrie.direction_mov == Vector2.ZERO:
 		return idle
-	is_sprinting = Input.is_action_pressed("sprint")
+	if Input.is_action_just_pressed("sprint"):
+		is_sprinting = !is_sprinting
 	valkyrie.velocity = valkyrie.direction_mov * move_speed * (sprint_ratio if is_sprinting else 1.0)
 	# valkyrie.cal_new_anim_direction()
 	# if valkyrie.is_anim_direction_changed():
