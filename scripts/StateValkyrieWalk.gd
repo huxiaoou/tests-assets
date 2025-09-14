@@ -1,6 +1,8 @@
 class_name StateValkyrieWalk extends StateValkyrie
 
 @export var move_speed: float = 180
+@export var sprint_ratio: float = 2
+var is_sprinting:bool = false
 
 @onready var sprite_2d_walk: Sprite2D = $"../../Sprite2DWalk"
 @onready var idle: StateValkyrieIdle = $"../Idle"
@@ -9,6 +11,7 @@ class_name StateValkyrieWalk extends StateValkyrie
 func enter() -> void:
 	sprite_2d_walk.visible = true
 	sprite_2d_walk.scale.x = valkyrie.anim_scale_x
+	is_sprinting = false
 	valkyrie.update_animation("walk")
 
 func exit() -> void:
@@ -17,7 +20,8 @@ func exit() -> void:
 func process(_delta: float) -> StateValkyrie:
 	if valkyrie.direction_mov == Vector2.ZERO:
 		return idle
-	valkyrie.velocity = valkyrie.direction_mov * move_speed
+	is_sprinting = Input.is_action_pressed("sprint")
+	valkyrie.velocity = valkyrie.direction_mov * move_speed * (sprint_ratio if is_sprinting else 1.0)
 	# valkyrie.cal_new_anim_direction()
 	# if valkyrie.is_anim_direction_changed():
 	# 	valkyrie.update_anim_direction()
