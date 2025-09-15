@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkmp4vf2du3qv"]
+[gd_scene load_steps=8 format=3 uid="uid://bkmp4vf2du3qv"]
 
 [ext_resource type="Script" uid="uid://buth44q3avxjw" path="res://scripts/FenceA.gd" id="1_oecap"]
 [ext_resource type="Texture2D" uid="uid://cnxexhkv1ti81" path="res://assets/maps/environment_forest.png" id="1_plco0"]
 [ext_resource type="PackedScene" uid="uid://wiuygtjg75gb" path="res://scenes/hitbox.tscn" id="2_k421u"]
+[ext_resource type="AudioStream" uid="uid://dl2x1dlvgmhxm" path="res://audios/wood-crack.mp3" id="2_y4cl5"]
 [ext_resource type="PackedScene" uid="uid://btoarx3r5b0a0" path="res://scenes/effect_shake.tscn" id="4_gnx7f"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnffg"]
@@ -13,6 +14,7 @@ size = Vector2(112, 32)
 
 [node name="FenceA" type="Node2D"]
 script = ExtResource("1_oecap")
+destructin_sound = ExtResource("2_y4cl5")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 72)
@@ -36,3 +38,5 @@ shape = SubResource("RectangleShape2D_oecap")
 debug_color = Color(0.717647, 0, 0, 0.313726)
 
 [node name="EffectShake" parent="." instance=ExtResource("4_gnx7f")]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
