@@ -162,6 +162,6 @@ script = ExtResource("1_0vdsg")
 
 [node name="EffectPlayer" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_no6bd")
-animation = &"slash01"
-frame = 10
+animation = &"slash08"
+frame = 8
 frame_progress = 1.0

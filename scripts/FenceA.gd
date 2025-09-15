@@ -1,6 +1,6 @@
 class_name FenceA extends Node2D
 
-@export var hp: float = 2
+@export var hp: float = 8
 @export var destructin_sound: AudioStream
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
