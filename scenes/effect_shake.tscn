@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://btoarx3r5b0a0"]
+
+[ext_resource type="Script" uid="uid://dowl4l6crimua" path="res://scripts/EffectShake.gd" id="1_rfw55"]
+
+[node name="EffectShake" type="Node"]
+script = ExtResource("1_rfw55")
