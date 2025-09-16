@@ -6,7 +6,6 @@ class_name FenceA extends Node2D
 
 func _ready() -> void:
 	$HitBox.Damaged.connect(take_damage)
-	$EffectShake.initialize($Sprite2D)
 
 func take_damage(damage: float) -> void:
 	hp -= damage

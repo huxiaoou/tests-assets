@@ -7,8 +7,8 @@ class_name EffectShake extends Node
 @onready var half_duration = shake_duration / ( shake_frequency * 2)
 var host: Sprite2D
 
-func initialize(sprite_host: Sprite2D) -> void:
-	host = sprite_host
+func _ready() -> void:
+	host = get_parent().get_node("Sprite2D")
 	
 func start() -> void:
 	var init_pos: Vector2 = host.position
@@ -24,5 +24,5 @@ func start() -> void:
 		tween.tween_property(
 			host, "position", init_pos, half_duration
 		).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
-	tween.tween_property(self, "position", init_pos, 0.05)
+	tween.tween_property(host, "position", init_pos, 0.05)
 	
