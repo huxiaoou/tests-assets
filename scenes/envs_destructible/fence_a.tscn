@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://buth44q3avxjw" path="res://scripts/FenceA.gd" id="1_oecap"]
 [ext_resource type="Texture2D" uid="uid://cnxexhkv1ti81" path="res://assets/maps/environment_forest.png" id="1_plco0"]
+[ext_resource type="AudioStream" uid="uid://ccfq1crvgr1h8" path="res://audios/debris-break-253779.mp3" id="2_gnx7f"]
 [ext_resource type="PackedScene" uid="uid://wiuygtjg75gb" path="res://scenes/hitbox.tscn" id="2_k421u"]
-[ext_resource type="AudioStream" uid="uid://dl2x1dlvgmhxm" path="res://audios/wood-crack.mp3" id="2_y4cl5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnffg"]
 size = Vector2(84, 16)
@@ -13,7 +13,7 @@ size = Vector2(112, 32)
 
 [node name="FenceA" type="Node2D"]
 script = ExtResource("1_oecap")
-destructin_sound = ExtResource("2_y4cl5")
+destructin_sound = ExtResource("2_gnx7f")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 72)
