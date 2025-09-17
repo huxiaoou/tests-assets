@@ -13,7 +13,7 @@ func _ready() -> void:
 func take_damage(damage: float) -> void:
 	hp -= damage
 	print("fence A take damage: " + str(damage) + ", remaining hp: " + str(hp))
-	effect_shake.start()
+	effect_shake.start(damage)
 	if hp <= 1e-4:
 		audio.stream = destructin_sound
 		audio.play(0.9)
