@@ -5,11 +5,11 @@ class_name EffectShake extends Node
 @export var shake_rotation: float = 5.0 / 180.0 * PI
 @export var shake_duration: float = 0.4
 @export var shake_frequency: int = 4 # Number of back-and-forth movements
-@onready var half_duration = shake_duration / ( shake_frequency * 2)
+@onready var half_duration = shake_duration / (shake_frequency * 2)
 var host: Sprite2D
 
-func _ready() -> void:
-	host = get_parent().get_node("Sprite2D")
+func initialize(hitbox_host: Sprite2D) -> void:
+	host = hitbox_host
 	
 func start(_damage: float) -> void:
 	var init_pos: Vector2 = host.position
@@ -36,4 +36,3 @@ func start(_damage: float) -> void:
 			host, "rotation", init_rot, half_duration
 		).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	#tween.tween_property(host, "position", init_pos, 0.05)
-	

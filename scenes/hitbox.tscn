@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://wiuygtjg75gb"]
+[gd_scene load_steps=26 format=3 uid="uid://wiuygtjg75gb"]
 
 [ext_resource type="Script" uid="uid://cayw47oxx0ut2" path="res://scripts/HitBox.gd" id="1_0vdsg"]
 [ext_resource type="Texture2D" uid="uid://dolog1txc8kkp" path="res://assets/effects/slash01.png" id="2_no6bd"]
 [ext_resource type="Texture2D" uid="uid://bxaecvxy2q1ex" path="res://assets/effects/slash08.png" id="2_qugoh"]
+[ext_resource type="PackedScene" uid="uid://btoarx3r5b0a0" path="res://scenes/effect_shake.tscn" id="4_ogycc"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_no6bd"]
 atlas = ExtResource("2_no6bd")
@@ -165,3 +166,5 @@ sprite_frames = SubResource("SpriteFrames_no6bd")
 animation = &"slash08"
 frame = 8
 frame_progress = 1.0
+
+[node name="EffectShake" parent="." instance=ExtResource("4_ogycc")]
