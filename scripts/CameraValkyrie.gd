@@ -11,6 +11,7 @@ class_name CameraValkyrie extends Camera2D
 func _ready() -> void:
 	GlobalMgrLevel.TileMapBoundsChanged.connect(update_limits)
 	direction_arrow.hurt_box.hurt_something.connect(add_shake)
+	timer.timeout.connect(_on_timer_out)
 	update_limits(GlobalMgrLevel.current_tilemap_bounds)
 	
 func update_limits(bounds: Array[Vector2]) -> void:
@@ -38,7 +39,6 @@ func process_shake(delta: float) -> void:
 
 func add_shake(amount):
 	trauma = min(trauma + sign(amount), 1.0)
-	timer.timeout.connect(_on_timer_out)
 	timer.start()
 	Engine.time_scale = 0.1
 
