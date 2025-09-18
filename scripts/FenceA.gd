@@ -1,7 +1,6 @@
 class_name FenceA extends Node2D
 
 @export var hp: float = 4
-@export var destructin_sound: AudioStream
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var hit_box: HitBox = $HitBox
 @onready var sprite_2d: Sprite2D = $Sprite2D
@@ -14,7 +13,6 @@ func take_damage(damage: float) -> void:
 	hp -= damage
 	print("fence A take damage: " + str(damage) + ", remaining hp: " + str(hp))
 	if hp <= 1e-4:
-		audio.stream = destructin_sound
-		audio.play(0.45)
+		audio.play(0.4)
 		audio.finished.connect(queue_free)
 		sprite_2d.visible = false

@@ -156,6 +156,10 @@ autoplay = "idle"
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("10_6l51o")
 
+[node name="Timer" type="Timer" parent="Camera"]
+wait_time = 0.05
+one_shot = true
+
 [node name="Audio" type="Node" parent="."]
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Audio"]
