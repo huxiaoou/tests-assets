@@ -6,9 +6,9 @@ class_name EffectShake extends Node
 @export var shake_duration: float = 0.4
 @export var shake_frequency: int = 4 # Number of back-and-forth movements
 @onready var half_duration = shake_duration / (shake_frequency * 2)
-var host: Sprite2D
+var host: Node2D
 
-func initialize(hitbox_host: Sprite2D) -> void:
+func initialize(hitbox_host: Node2D) -> void:
 	host = hitbox_host
 	
 func start(_damage: float) -> void:

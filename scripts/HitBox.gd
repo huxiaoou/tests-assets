@@ -3,11 +3,11 @@ class_name HitBox extends Area2D
 # when a node gets hit, means this node is hurted by other people
 @onready var effect_player: AnimatedSprite2D = $EffectPlayer
 @onready var effect_shake: EffectShake = $EffectShake
-@onready var host: Sprite2D = null
+@onready var host: Node2D = null
 
 signal Damaged(damage: float)
 
-func initialize(hitbox_host: Sprite2D) -> void:
+func initialize(hitbox_host: Node2D) -> void:
 	host = hitbox_host
 	effect_shake.initialize(host)
 

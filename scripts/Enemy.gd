@@ -13,9 +13,12 @@ var invulnerable: bool = false
 
 @onready var state_machine: StateMachineEnemy = $StateMachineEnemy
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hit_box: HitBox = $HitBox
 
 func _ready() -> void:
 	state_machine.initialize(self)
+	hit_box.initialize(animated_sprite_2d)
+	hit_box.Damaged.connect(take_damage)
 	#player = PlayerManager.player
 
 func _process(_delta: float) -> void:
@@ -54,3 +57,10 @@ func choose_anim_direction() -> String:
 		return "right"
 	else: # direction_anim == Vector2.DOWN:
 		return "down"
+
+func take_damage(damage: float) -> void:
+	enemy_damaged.emit()
+	hp -= damage
+	print("Goblin take damage: " + str(damage) + ", remaining hp: " + str(hp))
+	if hp <= 1e-4:
+		queue_free()

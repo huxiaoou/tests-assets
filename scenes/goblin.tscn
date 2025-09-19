@@ -1,4 +1,4 @@
-[gd_scene load_steps=160 format=3 uid="uid://ft5oslh7nn5n"]
+[gd_scene load_steps=162 format=3 uid="uid://ft5oslh7nn5n"]
 
 [ext_resource type="Script" uid="uid://bhcrhdvme0vp0" path="res://scripts/Enemy.gd" id="1_osho7"]
 [ext_resource type="PackedScene" uid="uid://bkwuh2umtbxqp" path="res://scenes/shadow_character.tscn" id="1_tjgje"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" uid="uid://c2ceme6ebanxj" path="res://scripts/StateMachineEnemy.gd" id="10_g2t3q"]
 [ext_resource type="Script" uid="uid://b3umdk5e5715q" path="res://scripts/StateEnemyIdle.gd" id="12_exsy4"]
 [ext_resource type="Script" uid="uid://cva7wsyapxis1" path="res://scripts/StateEnemyWander.gd" id="13_nadka"]
+[ext_resource type="PackedScene" uid="uid://wiuygtjg75gb" path="res://scenes/hitbox.tscn" id="14_17tps"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4yait"]
 atlas = ExtResource("2_4yait")
@@ -1068,6 +1069,10 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yait"]
 size = Vector2(76, 20)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_17tps"]
+radius = 47.0
+height = 168.0
+
 [node name="Goblin" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_osho7")
@@ -1097,3 +1102,9 @@ next_state = NodePath("../Wander")
 [node name="Wander" type="Node" parent="StateMachineEnemy" node_paths=PackedStringArray("next_state")]
 script = ExtResource("13_nadka")
 next_state = NodePath("../Idle")
+
+[node name="HitBox" parent="." instance=ExtResource("14_17tps")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+position = Vector2(0, -95)
+shape = SubResource("CapsuleShape2D_17tps")
