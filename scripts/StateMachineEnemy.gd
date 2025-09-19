@@ -12,16 +12,16 @@ func initialize(_enemy: Enemy) -> void:
 	for c in get_children():
 		if c is StateEnemy:
 			states.append(c)
-	for s in states:
-		s.enemy = _enemy
-		s.state_machine = self
-		s.init()
+			c.enemy = _enemy
+			c.init()
 
 	if not states.is_empty():
-		change_state(states[0])
+		check_state(states[0])
 		process_mode = Node.PROCESS_MODE_INHERIT
+	else:
+		print("No state available")
 
-func change_state(new_state: StateEnemy) -> void:
+func check_state(new_state: StateEnemy) -> void:
 	if new_state == null || new_state == curr_state:
 		return
 	if curr_state:
@@ -32,7 +32,7 @@ func change_state(new_state: StateEnemy) -> void:
 	curr_state.enter()
 	
 func _process(delta: float) -> void:
-	change_state(curr_state.process(delta))
+	check_state(curr_state.process(delta))
 	
 func _physics_process(delta: float) -> void:
-	change_state(curr_state.physics(delta))
+	check_state(curr_state.physics(delta))

@@ -7,8 +7,8 @@ const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @export var hp: int = 20
 
-var cardinal_direction: Vector2 = Vector2.DOWN
-var direction: Vector2 = Vector2.ZERO
+var direction_anim: Vector2 = Vector2.ZERO
+var direction_anim_new: Vector2 = Vector2.ZERO
 var invulnerable: bool = false
 
 @onready var state_machine: StateMachineEnemy = $StateMachineEnemy
@@ -24,28 +24,33 @@ func _process(_delta: float) -> void:
 func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
-func set_direction(_new_direction: Vector2) -> bool:
-	direction = _new_direction
-	if direction == Vector2.ZERO:
-		return false
+func cal_new_anim_direction() -> void:
+	direction_anim_new = DIR_4[randi_range(0, 3)]
 
-	var direction_id: int = int(round((direction * 0.99 + cardinal_direction * 0.01).angle() / TAU * DIR_4.size()))
-	var new_direction: Vector2 = DIR_4[direction_id]
-	if new_direction == cardinal_direction:
-		return false
-	cardinal_direction = new_direction
-	direction_changed.emit(new_direction)
-	return true
+func is_anim_direction_changed() -> bool:
+	return direction_anim_new != direction_anim
+
+func update_anim_direction() -> void:
+	direction_anim = direction_anim_new
+
+func generate_and_change_direction() -> void:
+	self.cal_new_anim_direction()
+	if self.is_anim_direction_changed():
+		self.update_anim_direction()
+		direction_changed.emit(direction_anim)
+
+func update_velocity(speed: float) -> void:
+	self.velocity = direction_anim * speed
 
 func update_animation(state: String) -> void:
-	animated_sprite_2d.play(state + "_" + anim_direction())
+	animated_sprite_2d.play(state + "_" + choose_anim_direction())
 
-func anim_direction() -> String:
-	if cardinal_direction == Vector2.UP:
+func choose_anim_direction() -> String:
+	if direction_anim == Vector2.UP:
 		return "up"
-	elif cardinal_direction == Vector2.LEFT:
+	elif direction_anim == Vector2.LEFT:
 		return "left"
-	elif cardinal_direction == Vector2.RIGHT:
+	elif direction_anim == Vector2.RIGHT:
 		return "right"
-	else: # cardinal_direction == Vector2.DOWN:
+	else: # direction_anim == Vector2.DOWN:
 		return "down"

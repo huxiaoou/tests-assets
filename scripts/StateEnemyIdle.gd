@@ -1,8 +1,8 @@
 class_name StateEnemyIdle extends StateEnemy
 
 @export_category("AI")
-@export var state_duration_min: float = 0.5
-@export var state_duration_max: float = 1.5
+@export var state_duration_min: float = 1.0
+@export var state_duration_max: float = 3.0
 @export var next_state: StateEnemy
 
 var anim_name: String = "idle"
