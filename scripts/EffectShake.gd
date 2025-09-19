@@ -8,6 +8,8 @@ class_name EffectShake extends Node
 @onready var half_duration = shake_duration / (shake_frequency * 2)
 var host: Node2D
 
+signal shake_finished()
+
 func initialize(hitbox_host: Node2D) -> void:
 	host = hitbox_host
 	
@@ -36,3 +38,5 @@ func start(_damage: float) -> void:
 			host, "rotation", init_rot, half_duration
 		).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN)
 	#tween.tween_property(host, "position", init_pos, 0.05)
+	await tween.finished
+	shake_finished.emit()

@@ -5,7 +5,7 @@ signal enemy_damaged()
 
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
-@export var hp: int = 20
+@export var hp: float = 5
 
 var direction_anim: Vector2 = Vector2.ZERO
 var direction_anim_new: Vector2 = Vector2.ZERO
@@ -19,6 +19,7 @@ func _ready() -> void:
 	state_machine.initialize(self)
 	hit_box.initialize(animated_sprite_2d)
 	hit_box.Damaged.connect(take_damage)
+	hit_box.effect_shake.shake_finished.connect(die)
 	#player = PlayerManager.player
 
 func _process(_delta: float) -> void:
@@ -62,5 +63,7 @@ func take_damage(damage: float) -> void:
 	enemy_damaged.emit()
 	hp -= damage
 	print("Goblin take damage: " + str(damage) + ", remaining hp: " + str(hp))
+
+func die() -> void:
 	if hp <= 1e-4:
 		queue_free()
