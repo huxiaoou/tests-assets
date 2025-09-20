@@ -1,7 +1,7 @@
 class_name CameraValkyrie extends Camera2D
 
 # Trauma parameters
-@onready var direction_arrow: DirectionArrow = $"../Sprite2DDirectionArrow"
+@onready var direction_arrow: DirectionArrow = $"../AnimatedSprite2D/Sprite2DDirectionArrow"
 @export var decay: float = 0.8 # How quickly the shaking stops (0 to 1)
 @export var max_offset: Vector2 = Vector2(8, 8) # Maximum horizontal/vertical add_shake
 @onready var trauma = 0.0
