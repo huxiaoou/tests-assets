@@ -1,39 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://bkmp4vf2du3qv"]
+[gd_scene load_steps=6 format=3 uid="uid://7jm0otbv3uwu"]
 
-[ext_resource type="Script" uid="uid://buth44q3avxjw" path="res://scripts/FenceA.gd" id="1_oecap"]
+[ext_resource type="PackedScene" uid="uid://bkmp4vf2du3qv" path="res://scenes/node_environment.tscn" id="1_32cu4"]
 [ext_resource type="Texture2D" uid="uid://cnxexhkv1ti81" path="res://assets/maps/environment_forest.png" id="1_plco0"]
 [ext_resource type="AudioStream" uid="uid://ccfq1crvgr1h8" path="res://audios/debris-break-253779.mp3" id="2_gnx7f"]
-[ext_resource type="PackedScene" uid="uid://wiuygtjg75gb" path="res://scenes/hitbox.tscn" id="2_k421u"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnffg"]
-size = Vector2(84, 16)
+[sub_resource type="AtlasTexture" id="AtlasTexture_oecap"]
+atlas = ExtResource("1_plco0")
+region = Rect2(0, 0, 128, 64)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_oecap"]
-size = Vector2(112, 32)
+[sub_resource type="SpriteFrames" id="SpriteFrames_gnx7f"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oecap")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
-[node name="FenceA" type="Node2D"]
-script = ExtResource("1_oecap")
+[node name="FenceA" instance=ExtResource("1_32cu4")]
+invincible = false
+hp = 12.0
+sound_destruction = ExtResource("2_gnx7f")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(0, 72)
-texture = ExtResource("1_plco0")
-region_enabled = true
-region_rect = Rect2(0, 0, 128, 64)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(0, 82)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("RectangleShape2D_bnffg")
-
-[node name="HitBox" parent="." instance=ExtResource("2_k421u")]
-position = Vector2(0, 72)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
-shape = SubResource("RectangleShape2D_oecap")
-debug_color = Color(0.717647, 0, 0, 0.313726)
-
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_gnx7f")
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(0, -19)
+sprite_frames = SubResource("SpriteFrames_gnx7f")

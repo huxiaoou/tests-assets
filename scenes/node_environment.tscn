@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkmp4vf2du3qv"]
+
+[ext_resource type="Script" uid="uid://buth44q3avxjw" path="res://scripts/NodeEnvironment.gd" id="1_jc7bf"]
+[ext_resource type="PackedScene" uid="uid://wiuygtjg75gb" path="res://scenes/hitbox.tscn" id="2_ctwcn"]
+[ext_resource type="AudioStream" uid="uid://ccfq1crvgr1h8" path="res://audios/debris-break-253779.mp3" id="3_mnlta"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bnffg"]
+size = Vector2(42, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oecap"]
+size = Vector2(54, 32)
+
+[node name="NodeEnvironment" type="Node2D"]
+script = ExtResource("1_jc7bf")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, -8)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_bnffg")
+
+[node name="HitBox" parent="." instance=ExtResource("2_ctwcn")]
+position = Vector2(0, -16)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
+shape = SubResource("RectangleShape2D_oecap")
+debug_color = Color(0.717647, 0, 0, 0.313726)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_mnlta")
