@@ -1379,7 +1379,7 @@ position = Vector2(-2, 89)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_6l51o")
-debug_color = Color(0.887802, 0.294823, 0.384032, 0.42)
+debug_color = Color(0.0250483, 0.523523, 0.714978, 0.42)
 
 [node name="Camera" type="Camera2D" parent="."]
 script = ExtResource("10_6l51o")

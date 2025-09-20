@@ -11,5 +11,6 @@ func _ready() -> void:
 
 func hurt_box_entered(area: Area2D) -> void:
 	if area is HitBox:
+		print("hit box enter hurtbox")
 		area.take_damage(damage)
 		hurt_something.emit(damage)
