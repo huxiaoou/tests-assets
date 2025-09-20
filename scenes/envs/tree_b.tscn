@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://bsdkw55ed7j4i"]
+
+[ext_resource type="PackedScene" uid="uid://bkmp4vf2du3qv" path="res://scenes/envs/node_environment.tscn" id="1_25nxw"]
+[ext_resource type="Texture2D" uid="uid://cnxexhkv1ti81" path="res://assets/maps/environment_forest.png" id="2_jrvjp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4yfv"]
+atlas = ExtResource("2_jrvjp")
+region = Rect2(1024, 768, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v3504"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4yfv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TreeB" instance=ExtResource("1_25nxw")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(-20, -110)
+sprite_frames = SubResource("SpriteFrames_v3504")
+
+[node name="CollisionShape2D" parent="HitBox" index="2"]
+position = Vector2(0, -13.5)

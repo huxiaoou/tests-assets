@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bcf4xm4a30fvf"]
 
-[ext_resource type="PackedScene" uid="uid://bkmp4vf2du3qv" path="res://scenes/node_environment.tscn" id="1_p0e6n"]
+[ext_resource type="PackedScene" uid="uid://bkmp4vf2du3qv" path="res://scenes/envs/node_environment.tscn" id="1_p0e6n"]
 [ext_resource type="AudioStream" uid="uid://ccfq1crvgr1h8" path="res://audios/debris-break-253779.mp3" id="2_cs1jr"]
 [ext_resource type="Texture2D" uid="uid://cnxexhkv1ti81" path="res://assets/maps/environment_forest.png" id="2_f1lly"]
 

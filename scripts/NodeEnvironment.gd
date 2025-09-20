@@ -1,7 +1,7 @@
 class_name NodeEnvironment extends Node2D
 
 @export var invincible: bool = true
-@export var hp: float = 4
+@export var hp: float = 1.0
 @export var sound_destruction: AudioStream
 
 @onready var audio: AudioStreamPlayer2D = $AudioStreamPlayer2D
