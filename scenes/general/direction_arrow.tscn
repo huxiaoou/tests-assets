@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cgixveuf2uxls" path="res://assets/arrow_direction.png" id="1_5hpxm"]
 [ext_resource type="Script" uid="uid://wjd7oityuxac" path="res://scripts/DirectionArrow.gd" id="2_7qvaf"]
-[ext_resource type="PackedScene" uid="uid://5n8lcbg8pfes" path="res://scenes/hurtbox.tscn" id="3_7qvaf"]
+[ext_resource type="PackedScene" uid="uid://5n8lcbg8pfes" path="res://scenes/general/hurtbox.tscn" id="3_7qvaf"]
 
 [sub_resource type="Animation" id="Animation_6l51o"]
 length = 0.001

@@ -1,7 +1,7 @@
 [gd_scene load_steps=162 format=3 uid="uid://ft5oslh7nn5n"]
 
 [ext_resource type="Script" uid="uid://bhcrhdvme0vp0" path="res://scripts/Enemy.gd" id="1_osho7"]
-[ext_resource type="PackedScene" uid="uid://bkwuh2umtbxqp" path="res://scenes/shadow_character.tscn" id="1_tjgje"]
+[ext_resource type="PackedScene" uid="uid://bkwuh2umtbxqp" path="res://scenes/general/shadow_character.tscn" id="1_tjgje"]
 [ext_resource type="Texture2D" uid="uid://njo7vccfqi3j" path="res://assets/goblin/Front - Idle.png" id="2_4yait"]
 [ext_resource type="Texture2D" uid="uid://dnudjdx3xau8u" path="res://assets/goblin/Left - Idle.png" id="3_76chb"]
 [ext_resource type="Texture2D" uid="uid://c5lhxvoyqlpnv" path="res://assets/goblin/Back - Idle.png" id="3_q3g0h"]
@@ -13,7 +13,7 @@
 [ext_resource type="Script" uid="uid://c2ceme6ebanxj" path="res://scripts/StateMachineEnemy.gd" id="10_g2t3q"]
 [ext_resource type="Script" uid="uid://b3umdk5e5715q" path="res://scripts/StateEnemyIdle.gd" id="12_exsy4"]
 [ext_resource type="Script" uid="uid://cva7wsyapxis1" path="res://scripts/StateEnemyWander.gd" id="13_nadka"]
-[ext_resource type="PackedScene" uid="uid://wiuygtjg75gb" path="res://scenes/hitbox.tscn" id="14_17tps"]
+[ext_resource type="PackedScene" uid="uid://wiuygtjg75gb" path="res://scenes/general/hitbox.tscn" id="14_17tps"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4yait"]
 atlas = ExtResource("2_4yait")

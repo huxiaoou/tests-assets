@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bkmp4vf2du3qv"]
 
 [ext_resource type="Script" uid="uid://buth44q3avxjw" path="res://scripts/NodeEnvironment.gd" id="1_1pwlb"]
-[ext_resource type="PackedScene" uid="uid://wiuygtjg75gb" path="res://scenes/hitbox.tscn" id="2_5u82q"]
+[ext_resource type="PackedScene" uid="uid://wiuygtjg75gb" path="res://scenes/general/hitbox.tscn" id="2_5u82q"]
 [ext_resource type="AudioStream" uid="uid://ccfq1crvgr1h8" path="res://audios/debris-break-253779.mp3" id="3_xhvbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnffg"]

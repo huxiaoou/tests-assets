@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://c3t2awagwvcj" path="res://scripts/CharacterValkyrie.gd" id="1_f14pw"]
 [ext_resource type="Script" uid="uid://b813safp4egwv" path="res://scripts/StateMachineValkyrie.gd" id="5_awdhw"]
-[ext_resource type="PackedScene" uid="uid://d1wmm4yrqyrcu" path="res://scenes/direction_arrow.tscn" id="6_873ht"]
+[ext_resource type="PackedScene" uid="uid://d1wmm4yrqyrcu" path="res://scenes/general/direction_arrow.tscn" id="6_873ht"]
 [ext_resource type="AudioStream" uid="uid://g58fq0ie3voa" path="res://audios/dragon-studio-sword-blade-slicing-flesh.mp3" id="6_oiwk2"]
 [ext_resource type="Script" uid="uid://c2uuygog3xb5j" path="res://scripts/StateValkyrieIdle.gd" id="6_ths34"]
-[ext_resource type="PackedScene" uid="uid://bkwuh2umtbxqp" path="res://scenes/shadow_character.tscn" id="7_h3ag3"]
+[ext_resource type="PackedScene" uid="uid://bkwuh2umtbxqp" path="res://scenes/general/shadow_character.tscn" id="7_h3ag3"]
 [ext_resource type="Script" uid="uid://b0w4pv8t4bpp7" path="res://scripts/StateValkyrieWalk.gd" id="7_upwqe"]
 [ext_resource type="Script" uid="uid://da04ywu3slwpl" path="res://scripts/StateValkyrieSlash.gd" id="8_873ht"]
 [ext_resource type="Texture2D" uid="uid://c3hml6gcl3dpb" path="res://assets/4d-CastleGuard/attack_down.png" id="8_laj1p"]
