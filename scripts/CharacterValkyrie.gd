@@ -3,14 +3,11 @@ class_name CharacterValkyrie extends CharacterBody2D
 var direction_mov: Vector2 = Vector2.ZERO
 var direction_anim_new: Vector2 = Vector2.ZERO
 var direction_anim: Vector2 = Vector2.ZERO
-var anim_scale_x: float = 1
-
 const DIR_4 = [Vector2.RIGHT, Vector2.DOWN, Vector2.LEFT, Vector2.UP]
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var state_machine: StateMachineValkyrie = $StateMachine
 @onready var direction_arrow: DirectionArrow = $AnimatedSprite2D/Sprite2DDirectionArrow
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,8 +24,8 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func cal_new_anim_direction() -> void:
-	var directon_id: int = int(round((direction_arrow.direction * 0.99 + direction_anim * 0.01).angle() / TAU * DIR_4.size()))
-	direction_anim_new = DIR_4[directon_id]
+	var direction_tmp: Vector2 = direction_arrow.direction * 0.99 + direction_anim * 0.01
+	direction_anim_new = DIR_4[int(round(direction_tmp.angle() / TAU * DIR_4.size()))]
 
 func is_anim_direction_changed() -> bool:
 	return direction_anim_new != direction_anim
@@ -37,14 +34,15 @@ func update_anim_direction():
 	direction_anim = direction_anim_new
 
 func get_anim_direction() -> String:
-	if direction_anim == Vector2.LEFT:
-		return "left"
-	elif direction_anim == Vector2.RIGHT:
-		return "right"
-	elif direction_anim == Vector2.UP:
-		return "up"
-	else: # direction_anim == Vector2.DOWN:
-		return "down"
+	match direction_anim:
+		Vector2.LEFT:
+			return "left"
+		Vector2.RIGHT:
+			return "right"
+		Vector2.UP:
+			return "up"
+		_: # Vector2.DOWN:
+			return "down"
 
 func update_animation(state: String) -> void:
 	animated_sprite_2d.play(state + "_" + get_anim_direction())

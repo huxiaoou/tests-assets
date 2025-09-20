@@ -9,7 +9,6 @@ signal hurt_something(damage: float)
 func _ready() -> void:
 	area_entered.connect(hurt_box_entered)
 
-
 func hurt_box_entered(area: Area2D) -> void:
 	if area is HitBox:
 		area.take_damage(damage)
