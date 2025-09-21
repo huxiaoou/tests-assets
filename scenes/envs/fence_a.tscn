@@ -1,29 +1,40 @@
-[gd_scene load_steps=6 format=3 uid="uid://7jm0otbv3uwu"]
+[gd_scene load_steps=7 format=3 uid="uid://c6hgtday4tu3d"]
 
 [ext_resource type="PackedScene" uid="uid://bkmp4vf2du3qv" path="res://scenes/envs/node_environment.tscn" id="1_32cu4"]
 [ext_resource type="Texture2D" uid="uid://cnxexhkv1ti81" path="res://assets/maps/environment_forest.png" id="1_plco0"]
-[ext_resource type="AudioStream" uid="uid://ccfq1crvgr1h8" path="res://audios/debris-break-253779.mp3" id="2_gnx7f"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oecap"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_uvdnw"]
 atlas = ExtResource("1_plco0")
 region = Rect2(0, 0, 128, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_gnx7f"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_eaw22"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_oecap")
+"texture": SubResource("AtlasTexture_uvdnw")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uvdnw"]
+resource_local_to_scene = true
+size = Vector2(98, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eaw22"]
+resource_local_to_scene = true
+size = Vector2(94, 32)
+
 [node name="FenceA" instance=ExtResource("1_32cu4")]
-invincible = false
-hp = 12.0
-sound_destruction = ExtResource("2_gnx7f")
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(0, -19)
-sprite_frames = SubResource("SpriteFrames_gnx7f")
+position = Vector2(0, -20)
+sprite_frames = SubResource("SpriteFrames_eaw22")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_uvdnw")
+
+[node name="CollisionShape2D" parent="HitBox" index="2"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_eaw22")

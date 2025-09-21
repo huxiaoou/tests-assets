@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cljrifrgcv332"]
+
+[ext_resource type="PackedScene" uid="uid://bkmp4vf2du3qv" path="res://scenes/envs/node_environment.tscn" id="1_kymgd"]
+[ext_resource type="Texture2D" uid="uid://cnxexhkv1ti81" path="res://assets/maps/environment_forest.png" id="2_ugp86"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_31cgv"]
+atlas = ExtResource("2_ugp86")
+region = Rect2(256, 512, 128, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bbadc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_31cgv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ugp86"]
+resource_local_to_scene = true
+size = Vector2(88, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_31cgv"]
+resource_local_to_scene = true
+size = Vector2(94, 32)
+
+[node name="StoneB" instance=ExtResource("1_kymgd")]
+
+[node name="AnimatedSprite2D" parent="." index="0"]
+position = Vector2(0, -23)
+sprite_frames = SubResource("SpriteFrames_bbadc")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+shape = SubResource("RectangleShape2D_ugp86")
+
+[node name="CollisionShape2D" parent="HitBox" index="2"]
+shape = SubResource("RectangleShape2D_31cgv")

@@ -5,10 +5,12 @@
 [ext_resource type="AudioStream" uid="uid://ccfq1crvgr1h8" path="res://audios/debris-break-253779.mp3" id="3_xhvbr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bnffg"]
-size = Vector2(40, 16)
+resource_local_to_scene = true
+size = Vector2(88, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oecap"]
-size = Vector2(31, 59)
+resource_local_to_scene = true
+size = Vector2(94, 32)
 
 [node name="NodeEnvironment" type="Node2D"]
 script = ExtResource("1_1pwlb")
@@ -31,3 +33,6 @@ debug_color = Color(0.717647, 0, 0, 0.313726)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_xhvbr")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true

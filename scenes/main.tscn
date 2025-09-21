@@ -1,13 +1,16 @@
-[gd_scene load_steps=9 format=4 uid="uid://de2rvmbaonshu"]
+[gd_scene load_steps=12 format=4 uid="uid://de2rvmbaonshu"]
 
 [ext_resource type="PackedScene" uid="uid://haoyq4hc6vmr" path="res://scenes/map_level.tscn" id="2_tipki"]
 [ext_resource type="PackedScene" uid="uid://c1522njwe33p6" path="res://scenes/characters/character_valkyrie.tscn" id="3_sugp2"]
-[ext_resource type="PackedScene" uid="uid://d0e7tkmktcokj" path="res://scenes/envs/tree_a.tscn" id="4_tefeu"]
-[ext_resource type="PackedScene" uid="uid://bsdkw55ed7j4i" path="res://scenes/envs/tree_b.tscn" id="5_o6xl0"]
-[ext_resource type="PackedScene" uid="uid://c766i4d5ye3hn" path="res://scenes/envs/tree_c.tscn" id="6_tipki"]
-[ext_resource type="PackedScene" uid="uid://7jm0otbv3uwu" path="res://scenes/envs/fence_a.tscn" id="8_85g3d"]
+[ext_resource type="PackedScene" uid="uid://cahh828ugf2cn" path="res://scenes/envs/tree_a.tscn" id="4_tefeu"]
+[ext_resource type="PackedScene" uid="uid://b1cbjotfskj4y" path="res://scenes/envs/tree_b.tscn" id="5_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://dfa8ypys55q1" path="res://scenes/envs/tree_c.tscn" id="6_tipki"]
+[ext_resource type="PackedScene" uid="uid://dnksccl0hsmn2" path="res://scenes/envs/stone_a.tscn" id="7_85g3d"]
+[ext_resource type="PackedScene" uid="uid://c6hgtday4tu3d" path="res://scenes/envs/fence_a.tscn" id="8_85g3d"]
+[ext_resource type="PackedScene" uid="uid://cljrifrgcv332" path="res://scenes/envs/stone_b.tscn" id="8_choun"]
+[ext_resource type="PackedScene" uid="uid://5hrtn5qxxqjh" path="res://scenes/envs/log_a.tscn" id="9_ya4ey"]
 [ext_resource type="PackedScene" uid="uid://ft5oslh7nn5n" path="res://scenes/characters/goblin.tscn" id="10_choun"]
-[ext_resource type="PackedScene" uid="uid://bcf4xm4a30fvf" path="res://scenes/envs/fence_b.tscn" id="11_ya4ey"]
+[ext_resource type="PackedScene" uid="uid://b8fikjk6pget5" path="res://scenes/envs/fence_b.tscn" id="11_ya4ey"]
 
 [node name="main" type="Node2D"]
 y_sort_enabled = true
@@ -18,35 +21,62 @@ tile_map_data = PackedByteArray("AAAHAAMABAADAAUAAAAGAAMABAACAAUAAAAAAP//BAAGAAU
 [node name="Environments" type="Node2D" parent="."]
 y_sort_enabled = true
 
-[node name="FenceA" parent="Environments" instance=ExtResource("8_85g3d")]
-position = Vector2(1209, 434)
-
-[node name="FenceA2" parent="Environments" instance=ExtResource("8_85g3d")]
-position = Vector2(1368, 759)
-
-[node name="FenceB" parent="Environments" instance=ExtResource("11_ya4ey")]
-position = Vector2(522, 1041)
-
-[node name="FenceB2" parent="Environments" instance=ExtResource("11_ya4ey")]
-position = Vector2(431, 200)
-
 [node name="TreeA" parent="Environments" instance=ExtResource("4_tefeu")]
-position = Vector2(739, 366)
+position = Vector2(690, 316)
 
 [node name="TreeA2" parent="Environments" instance=ExtResource("4_tefeu")]
-position = Vector2(1455, 634)
+position = Vector2(946, 1099)
+
+[node name="FenceA" parent="Environments" instance=ExtResource("8_85g3d")]
+position = Vector2(686, 636)
+
+[node name="FenceA2" parent="Environments" instance=ExtResource("8_85g3d")]
+position = Vector2(738, 1031)
+
+[node name="FenceA3" parent="Environments" instance=ExtResource("8_85g3d")]
+position = Vector2(1414, 183)
 
 [node name="TreeB" parent="Environments" instance=ExtResource("5_o6xl0")]
-position = Vector2(383, 856)
+position = Vector2(1228, 520)
 
 [node name="TreeB2" parent="Environments" instance=ExtResource("5_o6xl0")]
-position = Vector2(752, 1020)
+position = Vector2(17, 801)
 
 [node name="TreeC" parent="Environments" instance=ExtResource("6_tipki")]
-position = Vector2(1138, 1030)
+position = Vector2(523, 946)
 
 [node name="TreeC2" parent="Environments" instance=ExtResource("6_tipki")]
-position = Vector2(1127, 282)
+position = Vector2(1418, 1003)
+
+[node name="FenceB" parent="Environments" instance=ExtResource("11_ya4ey")]
+position = Vector2(1150, 792)
+
+[node name="FenceB2" parent="Environments" instance=ExtResource("11_ya4ey")]
+position = Vector2(1236, 907)
+
+[node name="FenceB3" parent="Environments" instance=ExtResource("11_ya4ey")]
+position = Vector2(313, 916)
+
+[node name="StoneA" parent="Environments" instance=ExtResource("7_85g3d")]
+position = Vector2(382, 196)
+
+[node name="StoneA2" parent="Environments" instance=ExtResource("7_85g3d")]
+position = Vector2(1154, 1052)
+
+[node name="StoneB" parent="Environments" instance=ExtResource("8_choun")]
+position = Vector2(1502, 737)
+
+[node name="StoneB2" parent="Environments" instance=ExtResource("8_choun")]
+position = Vector2(541, 383)
+
+[node name="LogA" parent="Environments" instance=ExtResource("9_ya4ey")]
+position = Vector2(434, 568)
+
+[node name="LogA2" parent="Environments" instance=ExtResource("9_ya4ey")]
+position = Vector2(537, 568)
+
+[node name="LogA3" parent="Environments" instance=ExtResource("9_ya4ey")]
+position = Vector2(436, 661)
 
 [node name="CharacterValkyrie" parent="." instance=ExtResource("3_sugp2")]
 position = Vector2(960, 540)

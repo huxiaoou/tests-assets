@@ -1,28 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsdkw55ed7j4i"]
+[gd_scene load_steps=7 format=3 uid="uid://b1cbjotfskj4y"]
 
 [ext_resource type="PackedScene" uid="uid://bkmp4vf2du3qv" path="res://scenes/envs/node_environment.tscn" id="1_25nxw"]
 [ext_resource type="Texture2D" uid="uid://cnxexhkv1ti81" path="res://assets/maps/environment_forest.png" id="2_jrvjp"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_g4yfv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrvjp"]
 atlas = ExtResource("2_jrvjp")
 region = Rect2(1024, 768, 256, 256)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_v3504"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_g4yfv"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_g4yfv")
+"texture": SubResource("AtlasTexture_jrvjp")
 }],
 "loop": true,
 "name": &"default",
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_25nxw"]
+resource_local_to_scene = true
+size = Vector2(44, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jrvjp"]
+resource_local_to_scene = true
+size = Vector2(28, 60)
+
 [node name="TreeB" instance=ExtResource("1_25nxw")]
 
 [node name="AnimatedSprite2D" parent="." index="0"]
-position = Vector2(-20, -110)
-sprite_frames = SubResource("SpriteFrames_v3504")
+position = Vector2(0, -111)
+sprite_frames = SubResource("SpriteFrames_g4yfv")
+
+[node name="CollisionShape2D" parent="StaticBody2D" index="0"]
+position = Vector2(24, -2)
+shape = SubResource("RectangleShape2D_25nxw")
 
 [node name="CollisionShape2D" parent="HitBox" index="2"]
-position = Vector2(0, -13.5)
+position = Vector2(21, -16)
+shape = SubResource("RectangleShape2D_jrvjp")
