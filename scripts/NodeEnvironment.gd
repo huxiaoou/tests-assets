@@ -15,7 +15,7 @@ func _ready() -> void:
 func take_damage(damage: float) -> void:
 	if not invincible:
 		hp -= damage
-		print("fence A take damage: " + str(damage) + ", remaining hp: " + str(hp))
+		print("take damage: " + str(damage) + ", remaining hp: " + str(hp))
 	
 		if hp <= 1e-4:
 			audio.stream = sound_destruction

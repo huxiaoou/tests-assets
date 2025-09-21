@@ -4,12 +4,12 @@ var host: Node2D
 var init_pos: Vector2
 var init_rot: float
 
-@export var x_max = 6
-@export var r_max = 5.0 / 180.0 * PI
+@export var x_max = 4
+@export var r_max = 3.0 / 180.0 * PI
 @export var pivot_below = true
 
 const STOP_THRESHOLD = 0.1
-const TEWEEN_DURATION = 0.1
+const TEWEEN_DURATION = 0.05
 const RECOVERY_FACTOR = 2.0 / 3
 const TRANSITION_TYPE = Tween.TRANS_SINE
 
